@@ -12,6 +12,9 @@ var myBoss = "Bernie",
 	newEmployeePrompt,
 	myCompany = "Theater Hands",
 	lightLocation;
+	leftLights = true,
+	rightLights = true,
+	brokenBallast = false,
 
 newEmployeePrompt = prompt("You are my new employee!  What is your name?"); 
 if (newEmployeePrompt === "Lee") { 
@@ -28,11 +31,14 @@ if (lightLocation === true) {
 } else {		
 	console.log("Looks like you're going to have to go get that ladder.");
 };
-	
 
+// Reused from boolean logic notes.  Revise in the morning to adjust appropriately
+if ((rightLights && leftLights) || brokenBallast) {
+	console.log("The ballast is fine.  The lights are just old and need to be changed");
+} else {
+	console.log("The lights are fine, the ballast needs to be replaced");
+}
 
-
-console.log("This is " + lightLocation); 
 
 
 
