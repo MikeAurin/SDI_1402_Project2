@@ -7,12 +7,16 @@
 
 // Variables
 var myBoss = "Bernie",
-	theTheater = "Regal Cinemas at Sawgrass Mills".
+	theTheater = "Regal Cinemas at Sawgrass Mills Mall",
 	newEmployeePrompt,
 	myCompany = "Theater Hands",
 	lightLocation,
 	brokenBallast = false,
-	lightsOn = false ,
+	lightsOn = false,
+	boxOfBulbs = 12,
+	lightsPerFixture = 4,
+	lunchLocation,
+	
 
 // prompt requirement
 newEmployeePrompt = prompt("You are my new employee!  What is your name?"); 
@@ -23,7 +27,9 @@ if (newEmployeePrompt === "Lee") {
 };
 
 console.log("Welcome to " + myCompany + ", " + newEmployeePrompt + "!  You're my new helper, let's get started!");
+console.log("Today " + myBoss + " wants us to examine and repair a light fixture at " + theTheater + ".");
 
+// confirm
 lightLocation = confirm("The light fixture that is out is located in the front of the auditorium, right?");
 if (lightLocation === true) {
 	console.log("Excellent, I'll go get the lift.")
@@ -31,7 +37,7 @@ if (lightLocation === true) {
 	console.log("Looks like you're going to have to go get that ladder.");
 };
 
-// while loop
+// boolean while loop
 if (brokenBallast || lightsOn === false) {
 	var getBulbs = function(newBulbs) {
 		var brokenBulbs = 4,
@@ -40,34 +46,42 @@ if (brokenBallast || lightsOn === false) {
 			console.log("The light bulbs are bad.");
 			} else {
 			console.log("The ballast needs to be replaced.");
-		
-		
 		}
-		return newBulbs;
+		return goodBulbs;
 	}
 	
 };
 var replaceBulbs = getBulbs(4)
 console.log("We need to replace " + replaceBulbs + " lights in this auditorium.");
 
+neededBulbs = replaceBulbs;
+console.log("A box of lights contain " + boxOfBulbs + " bulbs.  We only need " + replaceBulbs + " of them.");
 
+// math for loop
+var work = function() {
+for (var lightsPerFixture = 4; lightsPerFixture > 0; lightsPerFixture--) {
+	console.log("One light down, " + lightsPerFixture + " to go.  Hand me another one " + newEmployeePrompt + ".");
+	 }
+	var invoice = lightsPerFixture + 4
+		return invoice;
+};
+		
+var doWork = work();
+console.log("Thanks " + newEmployeePrompt + ".  We changed " + doWork + " lights.");
 
-// Requirements:
-// Remember to comment code...and remove this.
-// Git commits!
-// One while loop and one for loop
-// At least two boolean logic expressions
-// One function that doesn't return a value (a procedure)
-// One function that takes two arguments and does a while loop with some kind of Boolean comparison between them. 
-//   One argument should be the value returned from the confirm and the other can be any data type you choose.
-// One function that does something interesting with strings after accepting two strings as arguments. 
-//   This can be simple concatenation, but you are encouraged to look into other, more interesting string applications.
-// One function that takes a single number and uses it in a for loop somehow, doing some math at the same time. 
-//   This can be something simple like counting or summing, but again you are encouraged to look into more interesting applications.
-   
-/*Since three of these functions return values, you should do something interesting with the values when you get them back. 
-  You are encouraged, but not required, to use the return values from earlier functions as the inputs for later functions. 
-  You'll need this for Project 3, so it's something you should get comfortable with now.
-*/
+console.log("Now we'll send an invoice for " + lightsPerFixture + " bulbs.");
 
-// All functions take arguments
+// string concatenation
+lunch = function(food){
+	var lunchLocation = confirm("Do you wanna go to Panda Express for lunch?  Otherwise we're hitting the Mickey D's drive thru on the way home.");
+	if (lunchLocation === true) {
+		lunchLocation = "Panda Express";
+		} else {
+		lunchLocation = "McDonalds";
+	}
+	return lunchLocation;
+};
+var lunchLocation = lunch()
+console.log("Alright, " + newEmployeePrompt + "...Let's go to " + lunchLocation + ".");
+
+console.log("Thanks for your hard work today " + newEmployeePrompt + "!  You learned how to change " + lightsPerFixture + " and we got some delicious " + lunchLocation + ".");
