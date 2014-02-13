@@ -8,14 +8,13 @@
 // Variables
 var myBoss = "Bernie",
 	theTheater = "Regal Cinemas at Sawgrass Mills".
-	numberOfBulbs = 4,
 	newEmployeePrompt,
 	myCompany = "Theater Hands",
-	lightLocation;
-	leftLights = true,
-	rightLights = true,
+	lightLocation,
 	brokenBallast = false,
+	lightsOn = false ,
 
+// prompt requirement
 newEmployeePrompt = prompt("You are my new employee!  What is your name?"); 
 if (newEmployeePrompt === "Lee") { 
 	console.log("Nice to meet you.  You look like a strong, competent fellow.")
@@ -23,7 +22,7 @@ if (newEmployeePrompt === "Lee") {
 	console.log("You're kind of scrawny, but you'll do.");
 };
 
-console.log("Welcome to " + myCompany + ", " + newEmployeePrompt + "!  Let's get started.");
+console.log("Welcome to " + myCompany + ", " + newEmployeePrompt + "!  You're my new helper, let's get started!");
 
 lightLocation = confirm("The light fixture that is out is located in the front of the auditorium, right?");
 if (lightLocation === true) {
@@ -32,13 +31,24 @@ if (lightLocation === true) {
 	console.log("Looks like you're going to have to go get that ladder.");
 };
 
-// Reused from boolean logic notes.  Revise in the morning to adjust appropriately
-if ((rightLights && leftLights) || brokenBallast) {
-	console.log("The ballast is fine.  The lights are just old and need to be changed");
-} else {
-	console.log("The lights are fine, the ballast needs to be replaced");
-}
-
+// while loop
+if (brokenBallast || lightsOn === false) {
+	var getBulbs = function(newBulbs) {
+		var brokenBulbs = 4,
+			goodBulbs = 0;
+		if (brokenBulbs > goodBulbs) {
+			console.log("The light bulbs are bad.");
+			} else {
+			console.log("The ballast needs to be replaced.");
+		
+		
+		}
+		return newBulbs;
+	}
+	
+};
+var replaceBulbs = getBulbs(4)
+console.log("We need to replace " + replaceBulbs + " lights in this auditorium.");
 
 
 
